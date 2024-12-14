@@ -1,0 +1,338 @@
+/*HERO SECTION*/
+
+#hero {
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    padding-top:50px;
+    color:white;
+    background: linear-gradient(207deg, #053069, #40139f, #007abb);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 14s ease infinite;
+    -moz-animation: AnimationName 14s ease infinite;
+    animation: AnimationName 14s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:90% 0%}
+    50%{background-position:11% 100%}
+    100%{background-position:90% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:90% 0%}
+    50%{background-position:11% 100%}
+    100%{background-position:90% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:90% 0%}
+    50%{background-position:11% 100%}
+    100%{background-position:90% 0%}
+}
+
+section .air{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+    background-size: 1000px 100px
+  }
+  section .air.air1{
+    animation: wave 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+  }
+  section .air.air2{
+    animation: wave2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+  }
+  section .air.air3{
+    animation: wave 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+  }
+  section .air.air4{
+    animation: wave2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+  }
+  @keyframes wave{
+    0%{
+      background-position-x: 0px; 
+    }
+    100%{
+      background-position-x: 1000px; 
+    }
+  }
+  @keyframes wave2{
+    0%{
+      background-position-x: 0px; 
+    }
+    100%{
+      background-position-x: -1000px; 
+    }
+  }
+
+.hero-name {
+  margin-top:0px;
+    text-align: center;
+    font-size: 7.5rem;
+    margin-bottom:10px;
+    font-family: "Jaro", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    letter-spacing: 5px;
+    animation: introduction-name 3s ease 0s 1 normal forwards;
+}
+
+@keyframes introduction-name {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.introduction {
+    font-size: 0.5rem;
+    animation: introduction-text 4s ease 0s 1 normal forwards;
+}
+
+@keyframes introduction-text {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.hero-button span {
+    font-family: "Jaro", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    letter-spacing: 2px;
+}
+
+.hero-name span {
+  font-size: 4rem;
+}
+
+.introduction > .key-words {
+  font-weight: bold;
+}
+
+/*RESUME SECTION*/
+
+#resume {
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  view-timeline-name: --revealing-image;
+    view-timeline-axis: block;
+    animation: linear reveal both;
+    animation-timeline: --revealing-image;
+    animation-range: entry 25% cover 50%;
+}
+
+@keyframes reveal {
+	from {
+		opacity: 0;
+		clip-path: inset(45% 20% 45% 20%);
+	}
+	to {
+		opacity: 1;
+		clip-path: inset(0% 0% 0% 0%);
+	}
+}
+
+#resume h1 {
+  font-family: "Jaro", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 5rem;
+    letter-spacing: 5px;
+    background: -webkit-linear-gradient( #053069, #007abb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} 
+
+.uni-text {
+  font-size: 3rem;
+}
+
+/*PROJECTS*/
+
+#projects {
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.projects-title {
+  font-family: "Jaro", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 5rem;
+    letter-spacing: 5px;
+    background: -webkit-linear-gradient( #053069, #007abb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.view-btn-txt {
+  font-family: "Jaro", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.project-title {
+  font-family: "Jaro", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/*CONTACT*/
+
+#contact {
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #b9e6ff;
+}
+
+.contact-button {
+  background: -webkit-linear-gradient( #053069, #007abb);
+}
+
+.contact-title {
+  font-family: "Jaro", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 10rem;
+    letter-spacing: 5px;
+    background: -webkit-linear-gradient( #053069, #007abb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+#footer {
+  height:auto;
+  background: linear-gradient(207deg, #053069, #40139f, #007abb);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 14s ease infinite;
+    -moz-animation: AnimationName 14s ease infinite;
+    animation: AnimationName 14s ease infinite;
+}
+
+/*MOBILE*/
+@media (min-width:319px) and (max-width:480px) {
+  .hero-name {
+    margin-top:0px;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom:10px;
+  }
+
+  #resume h1 {
+      font-size: 2rem;
+  } 
+
+  .projects-title {
+      font-size: 3rem;
+  }
+
+  .project-title {
+    font-size:0.5rem
+  }
+
+  #projects {
+    height:auto;
+  }
+
+  .contact-title {
+      font-size: 5rem;
+  }
+
+  #contact {
+    height:auto;
+  }
+
+  .con-but-image {
+    height:50px;
+    width:50px;
+  }
+
+
+}
+
+/*IPAD*/
+@media (min-width:481px) and (max-width:600px) {
+
+  #contacts {
+    height:auto;
+  }
+  
+
+}
+
+/*DESKTOP*/
+@media (min-width:1600px) {
+  .hero-name {
+    text-align: center;
+    font-size: 12rem;
+  }
+
+  #resume h1 {
+      font-size: 8rem;
+  } 
+
+  .projects-title {
+      font-size: 8rem;
+  }
+
+  .project-title {
+    font-size:2rem
+  }
+
+  #projects {
+    height:auto;
+  }
+
+  .contact-title {
+      font-size: 8rem;
+  }
+
+  #contact {
+    height:auto;
+  }
+
+
+}
