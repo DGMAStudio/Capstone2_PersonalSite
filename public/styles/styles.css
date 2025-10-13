@@ -1,337 +1,265 @@
-/*HERO SECTION*/
+/* =========================
+   BASE / GLOBAL
+   ========================= */
+.text-max { max-width: 70ch; }
 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================
+   SHARED ANIMATIONS
+   ========================= */
+@keyframes heroGradient {
+  0% { background-position: 90% 0%; }
+  50% { background-position: 11% 100%; }
+  100% { background-position: 90% 0%; }
+}
+@keyframes wave  { 0%{background-position-x:0} 100%{background-position-x:1000px} }
+@keyframes wave2 { 0%{background-position-x:0} 100%{background-position-x:-1000px} }
+@keyframes introName { 0%{opacity:0; transform:translateY(-28px)} 100%{opacity:1; transform:translateY(0)} }
+@keyframes introText { 0%{opacity:0; transform:translateY(-16px)} 100%{opacity:1; transform:translateY(0)} }
+
+/* =========================
+   HERO
+   ========================= */
 #hero {
-    height:100vh;
-    display:flex;
-    justify-content: center;
-    padding-top:50px;
-    color:white;
-    background: linear-gradient(207deg, #053069, #40139f, #007abb);
-    background-size: 600% 600%;
-
-    -webkit-animation: AnimationName 14s ease infinite;
-    -moz-animation: AnimationName 14s ease infinite;
-    animation: AnimationName 14s ease infinite;
-}
-
-@-webkit-keyframes AnimationName {
-    0%{background-position:90% 0%}
-    50%{background-position:11% 100%}
-    100%{background-position:90% 0%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:90% 0%}
-    50%{background-position:11% 100%}
-    100%{background-position:90% 0%}
-}
-@keyframes AnimationName {
-    0%{background-position:90% 0%}
-    50%{background-position:11% 100%}
-    100%{background-position:90% 0%}
-}
-
-section .air{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
-    background-size: 1000px 100px
-  }
-  section .air.air1{
-    animation: wave 30s linear infinite;
-    z-index: 1000;
-    opacity: 1;
-    animation-delay: 0s;
-    bottom: 0;
-  }
-  section .air.air2{
-    animation: wave2 15s linear infinite;
-    z-index: 999;
-    opacity: 0.5;
-    animation-delay: -5s;
-    bottom: 10px;
-  }
-  section .air.air3{
-    animation: wave 30s linear infinite;
-    z-index: 998;
-    opacity: 0.2;
-    animation-delay: -2s;
-    bottom: 15px;
-  }
-  section .air.air4{
-    animation: wave2 5s linear infinite;
-    z-index: 997;
-    opacity: 0.7;
-    animation-delay: -5s;
-    bottom: 20px;
-  }
-  @keyframes wave{
-    0%{
-      background-position-x: 0px; 
-    }
-    100%{
-      background-position-x: 1000px; 
-    }
-  }
-  @keyframes wave2{
-    0%{
-      background-position-x: 0px; 
-    }
-    100%{
-      background-position-x: -1000px; 
-    }
-  }
-
-.hero-name {
-  margin-top:0px;
-    text-align: center;
-    font-size: 7.5rem;
-    margin-bottom:10px;
-    font-family: "Jaro", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    letter-spacing: 5px;
-    animation: introduction-name 3s ease 0s 1 normal forwards;
-}
-
-@keyframes introduction-name {
-	0% {
-		opacity: 0;
-		transform: translateY(-50px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-.introduction {
-    font-size: 0.5rem;
-    animation: introduction-text 4s ease 0s 1 normal forwards;
-}
-
-@keyframes introduction-text {
-	0% {
-		opacity: 0;
-		transform: translateY(-50px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-.hero-button span {
-    font-family: "Jaro", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    letter-spacing: 2px;
-}
-
-.hero-name span {
-  font-size: 4rem;
-}
-
-.introduction > .key-words {
-  font-weight: bold;
-}
-
-/*RESUME SECTION*/
-
-#resume {
-  height:100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  view-timeline-name: --revealing-image;
-    view-timeline-axis: block;
-    animation: linear reveal both;
-    animation-timeline: --revealing-image;
-    animation-range: entry 25% cover 50%;
+  padding-top: 50px;
+  color: white;
+  background: linear-gradient(207deg, #053069, #007abb);
+  background-size: 600% 600%;
+  animation: heroGradient 14s ease infinite;
 }
 
-@keyframes reveal {
-	from {
-		opacity: 0;
-		clip-path: inset(45% 20% 45% 20%);
-	}
-	to {
-		opacity: 1;
-		clip-path: inset(0% 0% 0% 0%);
-	}
+/* Waves */
+section .air {
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 100px;
+  background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+  background-size: 1000px 100px;
 }
+section .air.air1 { animation: wave 30s linear infinite; opacity: 1;  bottom: 0;  }
+section .air.air2 { animation: wave2 15s linear infinite; opacity: .5; bottom: 10px; }
+section .air.air3 { animation: wave 30s linear infinite;  opacity: .2; bottom: 15px; }
+section .air.air4 { animation: wave2 5s  linear infinite;  opacity: .7; bottom: 20px; }
 
-#resume h1 {
-  font-family: "Jaro", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 5rem;
-    letter-spacing: 5px;
-    background: -webkit-linear-gradient( #053069, #007abb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-} 
-
-.uni-text {
-  font-size: 3rem;
-}
-
-/*PROJECTS*/
-
-#projects {
-  height:100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Hero text */
+.hero-name{
+  margin: 0 0 10px;
   text-align: center;
-}
-
-.projects-title {
   font-family: "Jaro", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 5rem;
-    letter-spacing: 5px;
-    background: -webkit-linear-gradient( #053069, #007abb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  letter-spacing: 5px;
+  font-size: clamp(3rem, 8vw, 8rem);
+  animation: introName 1.2s ease both;
+}
+.hero-name span{ font-size: clamp(1.5rem, 5vw, 3rem); }
+
+.introduction{
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  margin-inline: auto; max-width: 70ch;
+  animation: introText 1.2s ease .15s both;
+}
+.introduction > .key-words { font-weight: 700; }
+
+/* =========================
+   UNIVERSITY (Resume)
+   ========================= */
+#resume{
+  min-height: auto; height: auto;
+  display: grid; place-items: center;
+  padding-block: 4rem;
+}
+@media (min-width: 992px){
+  #resume{
+    min-height: 100vh; height: 100vh;
+    display: flex; justify-content: center; align-items: center;
+    padding-block: 0;
+  }
 }
 
-.view-btn-txt {
+#resume h1{
   font-family: "Jaro", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    text-decoration: none;
-    font-size: 20px;
+  letter-spacing: 5px;
+  font-size: clamp(2rem, 5vw, 6rem);
+  background: -webkit-linear-gradient(#053069, #007abb);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.uni-text{ font-size: clamp(1.2rem, 3vw, 2rem); }
+.university img{ width: clamp(120px, 18vw, 200px); height: auto; }
+
+/* =========================
+   PROJECTS — soft sky glow + grid
+   ========================= */
+#projects{
+  min-height: 70vh;
+  display: grid; place-items: center; text-align: center;
+  padding-block: 4rem;
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(0,122,187,.12), transparent 60%),
+    radial-gradient(900px 500px at 85% 10%,  rgba(5,48,105,.10), transparent 60%),
+    linear-gradient(#ffffff, #ffffff);
+}
+#projects::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:
+    linear-gradient(transparent 31px, rgba(5,48,105,.06) 32px),
+    linear-gradient(90deg, transparent 31px, rgba(0,122,187,.06) 32px);
+  background-size: 32px 32px; mix-blend-mode: multiply; opacity: .45;
 }
 
-.project-title {
+.projects-title{
   font-family: "Jaro", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+  letter-spacing: 5px;
+  font-size: clamp(2rem, 5vw, 5rem);
+  background: -webkit-linear-gradient(#053069, #007abb);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  position: relative; display: inline-block;
+}
+.projects-title::after{
+  content:""; position:absolute; left:0; right:0; bottom:-0.4rem; height:6px;
+  background: linear-gradient(90deg, #053069, #007abb);
+  border-radius: 999px; transform: translateY(8px); opacity: .85;
 }
 
-/*CONTACT*/
+.project-title{ font-family: "Jaro", sans-serif; font-size: 1.2rem; }
 
-#contact {
-  height:100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+/* Cards */
+.feature{
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
+  border: 1px solid rgba(5,48,105,.10);
+  box-shadow: 0 10px 30px rgba(5,48,105,.08);
+  border-radius: 18px; padding: 1.25rem;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  backdrop-filter: saturate(120%) blur(3px);
+}
+.feature:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(5,48,105,.12);
+  border-color: rgba(0,122,187,.25);
+}
+#projects .feature p{ font-size: clamp(.95rem, .9rem + .2vw, 1.05rem); }
+
+.feature-icon{
+  width: 84px; height: 84px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #eaf4ff);
+  box-shadow: inset 0 0 0 1px rgba(5,48,105,.10), 0 10px 30px rgba(0,122,187,.20);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.feature:hover .feature-icon{ transform: translateY(-2px) scale(1.04); }
+.feature svg{ filter: drop-shadow(0 2px 6px rgba(0,0,0,.12)); }
+
+/* Buttons */
+#projects .btn{
+  border-radius: 999px; border: 1px solid rgba(5,48,105,.20);
+  padding: .55rem 1.1rem;
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+  background: linear-gradient(180deg, #ffffff, #f2f7ff);
+  box-shadow: 0 6px 16px rgba(5,48,105,.10);
+}
+#projects .btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(5,48,105,.14);
+  background: linear-gradient(180deg, #f9fbff, #eaf2ff);
+}
+#projects .btn .view-btn-txt{ font-family: "Jaro", sans-serif; font-size: 20px; color: #053069; }
+
+/* Spacing */
+#projects .container{ padding-top: clamp(2rem, 4vw, 3rem); }
+#projects .row{ row-gap: clamp(1rem, 2vw, 2rem); }
+
+/* =========================
+   CONTACT → FOOTER blend
+   ========================= */
+#contact{
+  min-height: 70vh;
+  display: grid; place-items: center; text-align: center;
+  padding-block: 4rem;
+  position: relative; isolation: isolate;
+  background:
+    radial-gradient(60% 40% at 50% 0%, rgba(0,122,187,.10), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f6f9ff 50%, #eef5ff 90%, #eef5ff 100%);
+}
+#contact::after{
+  content:""; position:absolute; left:0; right:0; bottom:-1px; height:40px;
+  pointer-events:none;
+  background: linear-gradient(180deg, rgba(5,48,105,0) 0%, rgba(5,48,105,.10) 100%);
+  mix-blend-mode: multiply; opacity: .25; z-index: 0;
 }
 
-.contact-button {
-  background: -webkit-linear-gradient( #053069, #007abb);
-}
-
-.contact-title {
+.contact-title{
   font-family: "Jaro", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 10rem;
-    letter-spacing: 5px;
-    background: -webkit-linear-gradient( #053069, #007abb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  letter-spacing: 5px;
+  font-size: clamp(3rem, 7vw, 8rem);
+  background: -webkit-linear-gradient(#053069, #007abb);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.contact-button{ background: -webkit-linear-gradient(#053069, #007abb); }
+#contact img{ width: clamp(120px, 16vw, 160px); height: auto; }
+.con-but-image{ width: clamp(42px, 8vw, 90px); height: clamp(42px, 8vw, 90px); }
+
+/* =========================
+   FOOTER (pure CSS curve + shadow)
+   ========================= */
+#footer{
+  position: relative; isolation: isolate;
+  background: linear-gradient(207deg, #053069, #007abb);
+  background-size: 600% 600%;
+  animation: heroGradient 14s ease infinite;
+  min-height: 100px;
+  padding-top: 1.5rem;
+}
+#footer::before{
+  content:""; position:absolute; left:0; right:0;
+  top: -70px; height: 150px;
+  background: #eef5ff; /* matches #contact bottom */
+  clip-path: ellipse(125% 92% at 50% 0%);
+  z-index: 0;
+}
+#footer::after{
+  content:""; position:absolute; left:0; right:0;
+  top: -2px; height: 10px;
+  background: linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,0));
+  filter: blur(5px); opacity: .14; pointer-events:none; z-index: 0;
 }
 
+/* Footer content + links */
+#footer .container,
+#footer footer { position: relative; z-index: 1; }
+#footer p, #footer a { color: #fff; text-decoration: none; }
+#footer a:hover { text-decoration: underline; color: #ffde59; }
 
-#footer {
-  height:auto;
-  background: linear-gradient(207deg, #053069, #40139f, #007abb);
-    background-size: 600% 600%;
+/* Extra breathing room at the seam */
+#contact .px-4.py-5.my-5 { padding-bottom: 5rem !important; }
+footer.py-4 { padding-top: 2.75rem !important; }
 
-    -webkit-animation: AnimationName 14s ease infinite;
-    -moz-animation: AnimationName 14s ease infinite;
-    animation: AnimationName 14s ease infinite;
+/* =========================
+   RESPONSIVE TWEAKS
+   ========================= */
+@media (max-width: 576px){
+  .hero-name, .projects-title, .contact-title { letter-spacing: 2px; }
+  #projects, #contact, #resume { padding-block: 3rem; }
 }
-
-/*MOBILE*/
-@media (min-width:319px) and (max-width:480px) {
-  .hero-name {
-    margin-top:0px;
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom:10px;
-  }
-
-  #resume h1 {
-      font-size: 2rem;
-  } 
-
-  .projects-title {
-      font-size: 3rem;
-  }
-
-  .project-title {
-    font-size:0.5rem
-  }
-
-  #projects {
-    height:auto;
-  }
-
-  .contact-title {
-      font-size: 5rem;
-  }
-
-  #contact {
-    height:auto;
-  }
-
-  .con-but-image {
-    height:50px;
-    width:50px;
-  }
-
-
+@media (min-width: 577px) and (max-width: 768px){
+  #projects .row { row-gap: 2rem; }
+  #resume .uni-text { font-size: 1.5rem; }
+  #contact .btn { padding: .6rem 1rem; }
 }
-
-/*IPAD*/
-@media (min-width:481px) and (max-width:600px) {
-
-  #contacts {
-    height:auto;
-  }
-  
-
+@media (min-width: 769px) and (max-width: 1199px){
+  #projects .row { row-gap: 2rem; }
 }
-
-/*DESKTOP*/
-@media (min-width:1600px) {
-  .hero-name {
-    text-align: center;
-    font-size: 12rem;
-  }
-
-  #resume h1 {
-      font-size: 8rem;
-  } 
-
-  .projects-title {
-      font-size: 8rem;
-  }
-
-  .project-title {
-    font-size:2rem
-  }
-
-  #projects {
-    height:auto;
-  }
-
-  .contact-title {
-      font-size: 8rem;
-  }
-
-  #contact {
-    height:auto;
-  }
-
-
+@media (min-width: 1600px){
+  .hero-name { font-size: clamp(6rem, 9vw, 12rem); }
+  .projects-title { font-size: clamp(4rem, 6vw, 8rem); }
+  .contact-title { font-size: clamp(5rem, 7vw, 8rem); }
+}
+@media (min-width: 481px) and (max-width: 600px){
+  #contact { min-height: auto; }
 }
