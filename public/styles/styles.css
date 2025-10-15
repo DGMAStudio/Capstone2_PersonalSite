@@ -1,7 +1,7 @@
 /* =========================
    BASE / GLOBAL
    ========================= */
-:root { color-scheme: light}             /* opt-out of auto-dark mode */
+:root { color-scheme: light dark}
 html, body { background:#ffffff; color:#111; }
 
 .text-max { max-width: 70ch; }
@@ -294,4 +294,116 @@ footer.py-4 { padding-top: 2.75rem !important; }
 }
 @media (min-width: 481px) and (max-width: 600px){
   #contact { min-height: auto; }
+}
+
+
+/* =========================
+   DARK MODE (waves OFF + readable colors)
+   ========================= */
+@media (prefers-color-scheme: dark) {
+  html, body { background:#0b1220; color:#e9eef7; }
+
+  /* HERO — keep gradient, remove waves */
+  #hero {
+    background: linear-gradient(207deg, #091a33, #073257);
+    color:#fff;
+  }
+  #hero::before{
+    background: linear-gradient(
+      180deg,
+      rgba(11,26,51,.65) 0%,
+      rgba(11,26,51,.45) 40%,
+      rgba(11,26,51,.20) 70%,
+      rgba(11,26,51,0) 100%
+    );
+  }
+  #hero .air { display:none !important; }   /* waves hidden */
+
+  .hero-name { text-shadow: 0 2px 14px rgba(0,0,0,.55); }
+  .introduction { text-shadow: 0 1px 10px rgba(0,0,0,.35); }
+
+  /* RESUME */
+  #resume { background:#0b1220; }
+  #resume h1{
+    background: -webkit-linear-gradient(#9fd0ff, #6cb6ff);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .uni-text { color:#cfd9e6; }
+
+  /* PROJECTS */
+  #projects{
+    color:#e9eef7;
+    background:
+      radial-gradient(1200px 600px at 15% -10%, rgba(53,132,187,.18), transparent 60%),
+      radial-gradient(900px 500px at 85% 10%,  rgba(18,36,66,.25), transparent 60%),
+      linear-gradient(#0f1726, #0f1726);
+  }
+  #projects::after{
+    background:
+      linear-gradient(transparent 31px, rgba(122,185,255,.07) 32px),
+      linear-gradient(90deg, transparent 31px, rgba(53,132,187,.08) 32px);
+    opacity:.35;
+  }
+  .projects-title{
+    background: -webkit-linear-gradient(#9fd0ff, #6cb6ff);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .project-title { color:#e9eef7; }
+
+  /* Cards */
+  .feature{
+    color:#dce6f4;
+    background: linear-gradient(180deg, rgba(20,28,46,.88), rgba(16,23,37,.80));
+    border:1px solid rgba(160,200,255,.16);
+    box-shadow: 0 10px 30px rgba(0,0,0,.45);
+  }
+  .feature:hover{
+    border-color: rgba(160,200,255,.28);
+    box-shadow: 0 16px 40px rgba(0,0,0,.55);
+  }
+  .feature-icon{
+    background: radial-gradient(circle at 30% 30%, #1d2742, #121a2e);
+    box-shadow: inset 0 0 0 1px rgba(160,200,255,.18), 0 10px 30px rgba(0,0,0,.35);
+  }
+
+  /* Buttons */
+  #projects .btn{
+    color:#e9eef7;
+    background: linear-gradient(180deg, #142034, #101a2e);
+    border-color: rgba(160,200,255,.28);
+    box-shadow: 0 6px 16px rgba(0,0,0,.45);
+  }
+  #projects .btn:hover{
+    background: linear-gradient(180deg, #1a2a45, #15243d);
+    box-shadow: 0 10px 24px rgba(0,0,0,.6);
+  }
+  #projects .btn .view-btn-txt{ color:#9fd0ff; }
+
+  /* CONTACT */
+  #contact{
+    color:#e9eef7;
+    background:
+      radial-gradient(60% 40% at 50% 0%, rgba(53,132,187,.18), transparent 60%),
+      linear-gradient(180deg, #0f1726 0%, #0e1624 50%, #0d1420 100%);
+  }
+  .contact-title{
+    background: -webkit-linear-gradient(#9fd0ff, #6cb6ff);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .contact-button{
+    background: -webkit-linear-gradient(#6cb6ff, #3f8fd8);
+    border:1px solid rgba(160,200,255,.25);
+  }
+  .contact-button-text { color:#0b1220; }
+
+  /* FOOTER */
+  #footer{ background: linear-gradient(207deg, #091a33, #073257); }
+  #footer::before{ background:#0d1420; }
+  #footer p, #footer a { color:#dce6f4; }
+  #footer a:hover { color:#ffde59; }
+
+  /* Links & borders */
+  a { color:#9fd0ff; }
+  a:hover { color:#c6e2ff; }
+  hr, .border, .feature { border-color: rgba(160,200,255,.18); }
 }
