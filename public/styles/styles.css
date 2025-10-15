@@ -1,7 +1,7 @@
 /* =========================
    BASE / GLOBAL
    ========================= */
-:root { color-scheme: light dark}
+:root { color-scheme: light dark; }
 html, body { background:#ffffff; color:#111; }
 
 .text-max { max-width: 70ch; }
