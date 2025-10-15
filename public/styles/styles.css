@@ -305,19 +305,19 @@ footer.py-4 { padding-top: 2.75rem !important; }
 
   /* HERO — keep gradient, remove waves */
   #hero {
-    background: linear-gradient(207deg, #091a33, #073257);
+    background: linear-gradient(207deg, #1d4480, #1a70bb);
     color:#fff;
   }
   #hero::before{
     background: linear-gradient(
       180deg,
-      rgba(11,26,51,.65) 0%,
-      rgba(11,26,51,.45) 40%,
-      rgba(11,26,51,.20) 70%,
+      rgba(35, 82, 165, 0.65) 0%,
+      rgba(5, 41, 103, 0.45) 40%,
+      rgba(55, 109, 204, 0.2) 70%,
       rgba(11,26,51,0) 100%
     );
   }
-  #hero .air { display:none !important; }   /* waves hidden */
+  #hero .air { opacity: 0 !important; }   /* waves hidden */
 
   .hero-name { text-shadow: 0 2px 14px rgba(0,0,0,.55); }
   .introduction { text-shadow: 0 1px 10px rgba(0,0,0,.35); }
@@ -325,7 +325,7 @@ footer.py-4 { padding-top: 2.75rem !important; }
   /* RESUME */
   #resume { background:#0b1220; }
   #resume h1{
-    background: -webkit-linear-gradient(#9fd0ff, #6cb6ff);
+    background: -webkit-linear-gradient(#aed8ff, #89b8e7);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   }
   .uni-text { color:#cfd9e6; }
